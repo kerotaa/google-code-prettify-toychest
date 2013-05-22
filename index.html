@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Toy Chest for Google-Code-Prettify</title>
+</head>
+<body>
+
+<style>
+	body{
+		color: #34495E;
+		background: #ECF0F1;
+		font-family: "Open Sans", "Source Sans Pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		padding: 10px 30px 30px;
+		margin: 0;
+		font-size: 1.5em;
+		-webkit-font-smoothing: antialiased;
+	}
+	a, a:link {
+		color: #2ecc71;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #f1c40f;
+
+	}
+	a:active, a:hover {
+		outline: 0;
+	}
+	::selection {
+		background-color: #cc81ea;
+		color: #ecf0f1;
+	}
+	pre.prettyprint {
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		-o-border-radius: 4px;
+		-ms-border-radius: 4px;
+		-khtml-border-radius: 4px;
+		border-radius: 4px;
+		font-size: 18px;
+		font-family: Menlo, Consolas, "Source Code Pro", "Courier New", Courier, Mono, monospace;
+	}
+	pre.prettyprint li {
+		white-space: pre-wrap;
+	}
+	h1 {
+		font-weight: bold;
+		font-size: 2em;
+	}
+	h2 {
+		font-weight: bold;
+		font-size: 1.6em;
+	}
+	a.button {
+		color: white;
+		background-color: #e67055;
+		border: 1px solid #e67055;
+		padding: 0 10px;
+		cursor: pointer;
+	}
+	a.button:hover {
+		background-color: #34d58e;
+		border-color: #25b173;
+	}
+	.author {
+		font-style: italic;
+		color: #999;
+	}
+</style>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="google-code-prettify/run_prettify.js"></script>
+<script type="text/javascript" src="google-code-prettify/lang-css.js"></script>
+
+<header>
+	<h1>
+		Toy Chest for Google-Code-Prettify
+
+	</h1>
+
+	<p>A Google-Code-Prettify theme like <a href="http://toychesttheme.com/">"Toy Chest"</a> <span class="author">by <a href="https://github.com/kerotaa">kerotaa</a>.</span></p>
+</header>
+
+<h2>Source Code <a class="button" href="toychest.css">Download</a></h2>
+<pre id="source-code" class="prettyprint lang-css linenums">
+pre.prettyprint {
+	display: block;
+	background-color: #2f475d;
+	border-color: #3a526b;
+	padding: .5em;
+	line-height: 1.3;
+	overflow: auto;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+pre.prettyprint .nocode { background-color: none; color: #2f475d }
+pre.prettyprint .str { color: #16a085 } /* string */
+pre.prettyprint .kwd { color: #e67055; font-weight: bold }
+pre.prettyprint .com { color: #407c9b } /* comment */
+pre.prettyprint .typ { color: #34d58e } /* type */
+pre.prettyprint .lit { color: #3eb5e1 } /* literal */
+pre.prettyprint .pun { color: #34d58e } /* punctuation */
+pre.prettyprint .pln { color: #ddd } /* plaintext */
+pre.prettyprint .tag { color: #e39f32; font-weight: bold } /* html/xml tag */
+pre.prettyprint .atn { color: #e67e22; font-weight: bold } /* attribute name */
+pre.prettyprint .atv { color: #ecdd5d } /* attribute value */
+pre.prettyprint .dec { color: #16a085 } /* decimal  */
+
+/* Specify class=linenums on a pre to get line numbering */
+pre.prettyprint ol.linenums {
+	margin-top: 0;
+	margin-bottom: 0;
+	color: #16a085;
+	position: relative;
+}
+
+pre.prettyprint ol.linenums li {
+	margin: 0;
+	list-style-type: decimal;
+	background-color: transparent;
+}
+
+/* highlight current line */
+pre.prettyprint ol li:hover { background-color: #1a2631; }
+
+@media print {
+	pre.prettyprint { background-color: none }
+	pre.prettyprint .str { color: #060 }
+	pre.prettyprint .kwd { color: #006; font-weight: bold }
+	pre.prettyprint .com { color: #600; font-style: italic }
+	pre.prettyprint .typ { color: #404; font-weight: bold }
+	pre.prettyprint .lit { color: #044 }
+	pre.prettyprint .pun { color: #440 }
+	pre.prettyprint .pln { color: #000 }
+	pre.prettyprint .tag { color: #006; font-weight: bold }
+	pre.prettyprint .atn { color: #404 }
+	pre.prettyprint .atv { color: #060 }
+}
+</pre>
+
+<h2>Java Demo</h2>
+<pre class="prettyprint lang-java linenums">
+package&nbsp;foo;
+
+import&nbsp;java.util.Iterator;
+
+/**
+&nbsp;*&nbsp;the&nbsp;fibonacci&nbsp;series&nbsp;implemented&nbsp;as&nbsp;an&nbsp;Iterable.
+&nbsp;*/
+public&nbsp;final&nbsp;class&nbsp;Fibonacci&nbsp;implements&nbsp;Iterable&lt;Integer&gt;&nbsp;{
+&nbsp;&nbsp;/**&nbsp;the&nbsp;next&nbsp;and&nbsp;previous&nbsp;members&nbsp;of&nbsp;the&nbsp;series.&nbsp;*/
+&nbsp;&nbsp;private&nbsp;int&nbsp;a&nbsp;=&nbsp;1,&nbsp;b&nbsp;=&nbsp;1;
+
+&nbsp;&nbsp;@Override
+&nbsp;&nbsp;public&nbsp;Iterator&lt;Integer&gt;&nbsp;iterator()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;new&nbsp;Iterator&lt;Integer&gt;()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**&nbsp;the&nbsp;series&nbsp;is&nbsp;infinite.&nbsp;*/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;boolean&nbsp;hasNext()&nbsp;{&nbsp;return&nbsp;true;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;Integer&nbsp;next()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;tmp&nbsp;=&nbsp;a;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;+=&nbsp;b;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;=&nbsp;tmp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;a;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;remove()&nbsp;{&nbsp;throw&nbsp;new&nbsp;UnsupportedOperationException();&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;};
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;/**
+&nbsp;&nbsp;&nbsp;*&nbsp;the&nbsp;n&lt;sup&gt;th&lt;/sup&gt;&nbsp;element&nbsp;of&nbsp;the&nbsp;given&nbsp;series.
+&nbsp;&nbsp;&nbsp;*&nbsp;@throws&nbsp;NoSuchElementException&nbsp;if&nbsp;there&nbsp;are&nbsp;less&nbsp;than&nbsp;n&nbsp;elements&nbsp;in&nbsp;the
+&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;given&nbsp;Iterable's&nbsp;{@link&nbsp;Iterable#iterator&nbsp;iterator}.
+&nbsp;&nbsp;&nbsp;*/
+&nbsp;&nbsp;public&nbsp;static&nbsp;&lt;T&gt;
+&nbsp;&nbsp;T&nbsp;nth(int&nbsp;n,&nbsp;Iterable&lt;T&gt;&nbsp;iterable)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;Iterator&lt;?&nbsp;extends&nbsp;T&gt;&nbsp;in&nbsp;=&nbsp;iterable.iterator();
+&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;(--n&nbsp;&gt;&nbsp;0)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in.next();
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;in.next();
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;public&nbsp;static&nbsp;void&nbsp;main(String[]&nbsp;args)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(nth(10,&nbsp;new&nbsp;Fibonacci()));
+&nbsp;&nbsp;}
+}
+
+#&nbsp;not&nbsp;a&nbsp;java&nbsp;comment
+#&nbsp;not&nbsp;keywords:&nbsp;static_cast&nbsp;and&nbsp;namespace
+</pre>
+
+<h2>HTML Demo</h2>
+<pre class="prettyprint lang-html">
+&lt;!doctype&nbsp;html&gt;
+&lt;html&nbsp;lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+	&lt;meta&nbsp;charset=&quot;UTF-8&quot;&gt;
+	&lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	Hello, World!
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<style type="text/css">
+pre.prettyprint {
+	display: block;
+	background-color: #2f475d;
+	border-color: #3a526b;
+	padding: .5em;
+	line-height: 1.3;
+	overflow: auto;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+pre.prettyprint .nocode { background-color: none; color: #2f475d }
+pre.prettyprint .str { color: #16a085 } /* string */
+pre.prettyprint .kwd { color: #e67055; font-weight: bold }
+pre.prettyprint .com { color: #407c9b } /* comment */
+pre.prettyprint .typ { color: #34d58e } /* type */
+pre.prettyprint .lit { color: #3eb5e1 } /* literal */
+pre.prettyprint .pun { color: #34d58e } /* punctuation */
+pre.prettyprint .pln { color: #ddd } /* plaintext */
+pre.prettyprint .tag { color: #e39f32; font-weight: bold } /* html/xml tag */
+pre.prettyprint .atn { color: #e67e22; font-weight: bold } /* attribute name */
+pre.prettyprint .atv { color: #ecdd5d } /* attribute value */
+
+pre.prettyprint .dec { color: #16a085 } /* decimal  */
+
+/* Specify class=linenums on a pre to get line numbering */
+pre.prettyprint ol.linenums {
+	margin-top: 0;
+	margin-bottom: 0;
+	color: #16a085;
+	position: relative;
+}
+
+pre.prettyprint ol.linenums li {
+	margin: 0;
+	list-style-type: decimal;
+	background-color: transparent;
+}
+
+/* highlight current line */
+pre.prettyprint ol li:hover { background-color: #1a2631; }
+
+@media print {
+	pre.prettyprint { background-color: none }
+	pre.prettyprint .str { color: #060 }
+	pre.prettyprint .kwd { color: #006; font-weight: bold }
+	pre.prettyprint .com { color: #600; font-style: italic }
+	pre.prettyprint .typ { color: #404; font-weight: bold }
+	pre.prettyprint .lit { color: #044 }
+	pre.prettyprint .pun { color: #440 }
+	pre.prettyprint .pln { color: #000 }
+	pre.prettyprint .tag { color: #006; font-weight: bold }
+	pre.prettyprint .atn { color: #404 }
+	pre.prettyprint .atv { color: #060 }
+}
+</style>
+
+</body>
+</html>
