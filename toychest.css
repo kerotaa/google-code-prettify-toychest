@@ -2,6 +2,7 @@
 	display: block;
 	background-color: #2f475d;
 	border-color: #3a526b;
+	color: #ddd;
 	padding: .5em;
 	line-height: 1.3;
 	overflow: auto;
